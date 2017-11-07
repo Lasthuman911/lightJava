@@ -1,5 +1,7 @@
 package proxy.steady;
 
+import proxy.Vender;
+
 /**
  * 静态代理测试
  */

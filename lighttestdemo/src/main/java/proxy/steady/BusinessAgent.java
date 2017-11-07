@@ -1,5 +1,8 @@
 package proxy.steady;
 
+import proxy.Sell;
+import proxy.Vender;
+
 /**
  *  静态代理
  *  @author light

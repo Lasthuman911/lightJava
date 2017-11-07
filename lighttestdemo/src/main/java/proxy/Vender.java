@@ -1,4 +1,4 @@
-package proxy.steady;
+package proxy;
 
 public class Vender implements Sell {
     @Override

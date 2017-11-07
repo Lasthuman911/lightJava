@@ -1,4 +1,4 @@
-package proxy.steady;
+package proxy;
 
 public interface Sell {
     void sell();
