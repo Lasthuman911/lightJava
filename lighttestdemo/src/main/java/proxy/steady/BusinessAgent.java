@@ -27,4 +27,12 @@ public class BusinessAgent implements Sell {
         mVender.ad();
         System.out.println("after ad");
     }
+
+    @Override
+    public int fk(int akNum) {
+        System.out.println("before fk");
+        int result = mVender.fk(788);
+        System.out.println("after fk");
+        return  result;
+    }
 }

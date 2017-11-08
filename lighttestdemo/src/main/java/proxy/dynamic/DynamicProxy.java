@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 /**
- * 动态代理
+ * 动态代理类
  * @author light
  */
 public class DynamicProxy implements InvocationHandler {
@@ -14,12 +14,13 @@ public class DynamicProxy implements InvocationHandler {
         this.object = object;
     }
 
+    //目标对象的引用，设计成Object，更具有通用性
     private Object object;
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("befor");
+        System.out.println("Enter "+object.getClass().getName()+"-"+method.getName()+",with arguments"+args);
         Object result = method.invoke(object,args);
-        System.out.println("after");
+        System.out.println("before return "+result);
         return result;
     }
 }

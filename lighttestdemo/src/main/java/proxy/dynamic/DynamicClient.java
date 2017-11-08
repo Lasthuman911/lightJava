@@ -22,5 +22,6 @@ public class DynamicClient {
         Sell sell = (Sell) Proxy.newProxyInstance(Sell.class.getClassLoader(),new Class[]{Sell.class},inter);
        sell.ad();
        sell.sell();
+       sell.fk(34);
     }
 }
