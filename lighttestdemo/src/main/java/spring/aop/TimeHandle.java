@@ -8,6 +8,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class TimeHandle {
     public void printCurrentTime(){
-        System.out.println("currentTime = "+System.currentTimeMillis()+"nanoTime = "+System.nanoTime());
+        System.out.println("currentTime = "+System.currentTimeMillis()+" nanoTime = "+System.nanoTime());
     }
 }
