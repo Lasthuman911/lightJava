@@ -9,12 +9,31 @@
     <context:component-scan base-package="spring"/>
         <!--<bean id="personImpl" class="spring.aop.PersonImpl"/>
          <bean id="timeHandle" class="spring.aop.TimeHandle"/>-->
-    <!--aop定义切面-->
+
+    <!--order:Spring默认以aspect的定义顺序作为织入顺序,order属性的数字就是横切关注点的顺序-->
     <aop:config>
-        <aop:aspect id="time" ref="timeHandle">
-            <aop:pointcut id="addAllMethod" expression="execution(* spring.aop.Person.*(..))"/>
-            <aop:before method="printCurrentTime" pointcut-ref="addAllMethod"/>
-            <aop:after method="printCurrentTime" pointcut-ref="addAllMethod"/>
+        <!--aop定义切面:ref:切面类,就是切面要做的事-->
+        <aop:aspect id="time" ref="timeHandle" order="1">
+            <!--定义切点:通知和一个切入点表达式关联，并在满足这个切入点的连接点上运行-->
+            <aop:pointcut id="addTime" expression="execution(* spring.aop.Person.*(..))"/>
+            <!--应用前置通知-->
+            <aop:before method="printCurrentTime" pointcut-ref="addTime"/>
+            <!--应用后置通知-->
+            <aop:after method="printCurrentTime" pointcut-ref="addTime"/>
         </aop:aspect>
     </aop:config>
+
+    <aop:config>
+        <aop:aspect id="log" ref="logHandle" order="2">
+            <aop:pointcut id="addLog" expression="execution(* spring.aop.Person.*(..))"/>
+            <aop:before method="logBefore" pointcut-ref="addLog"/>
+            <aop:after method="logAfter" pointcut-ref="addLog"/>
+        </aop:aspect>
+    </aop:config>
+
+    <!-- aop代理设置:proxy-target-class
+        设置为true：强制使用CGLIB生成代理
+        设置为false或者这个属性被省略，那么基于jdk接口的代理将起作用-->
+    <!--<aop:aspectj-autoproxy  proxy-target-class="true"/>-->
+
 </beans>
