@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--定义组件扫描的包,就不用再xml中显示的定义bean了，在类上面加@Compoment等注解即可-->
+    <context:component-scan base-package="spring"/>
+        <!--<bean id="personImpl" class="spring.aop.PersonImpl"/>
+         <bean id="timeHandle" class="spring.aop.TimeHandle"/>-->
+    <!--aop定义切面-->
+    <aop:config>
+        <aop:aspect id="time" ref="timeHandle">
+            <aop:pointcut id="addAllMethod" expression="execution(* spring.aop.Person.*(..))"/>
+            <aop:before method="printCurrentTime" pointcut-ref="addAllMethod"/>
+            <aop:after method="printCurrentTime" pointcut-ref="addAllMethod"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
