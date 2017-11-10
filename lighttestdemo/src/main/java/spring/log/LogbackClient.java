@@ -8,7 +8,7 @@ public class LogbackClient {
     public static void main(String[] args) {
         logger.debug("成功了");
         logger.info("成功了");
-        logger.warn("成功了");
-        logger.error("成功了");
+        logger.warn("warn");
+        logger.error("error");
     }
 }

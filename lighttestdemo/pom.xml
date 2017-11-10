@@ -72,7 +72,7 @@
         </dependency>
 
         <!--如果用logBack就要把log4j注释掉，反之亦然-->
-<!--        <dependency>
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.25</version>
@@ -82,10 +82,10 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
-        </dependency>-->
+        </dependency>
 
         <!--logback-->
-        <dependency>
+       <!-- <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
@@ -101,7 +101,7 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-access</artifactId>
             <version>1.2.3</version>
-        </dependency>
+        </dependency>-->
 
     </dependencies>
 </project>
