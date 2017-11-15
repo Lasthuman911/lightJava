@@ -14,7 +14,8 @@ public class BadLockOnInteger implements Runnable{
         for (int j = 0;j<1000000;j++){
             //重构 将i 改为instance
             synchronized (i){
-                //i++的本质是：创建一个新的Integer对象，并将它的引用赋值给i，所以用i同步将会有问题
+                //i++的本质是：创建一个新的Integer对象（127 以上是新的对象，具体看源码，所以i若是小于127 还是可以这么做的，但是不建议）
+                // 并将它的引用赋值给i，所以用i同步将会有问题
                 i++;
             }
         }
