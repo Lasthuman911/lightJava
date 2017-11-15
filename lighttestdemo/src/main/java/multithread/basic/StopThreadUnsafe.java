@@ -3,9 +3,11 @@ package multithread.basic;
 /**
  * 使用不安全的stop方法终止线程，容易产生不一致的情况
  * 重构后 添加一个stopme 状态来避免不一致情况
+ *
+ * @author wzm
  */
 public class StopThreadUnsafe {
-    public static User user = new User();
+    private static User user = new User();
 
     public static class User {
         private int id;
@@ -38,7 +40,7 @@ public class StopThreadUnsafe {
 
     /**
      * 使用static定义内部类为外部类
-     *
+     * <p>
      * 知识点：静态类和普通内部类的区别：
      * 如果你不需要内部类对象与其外围类对象之间有联系，那你可以将内部类声明为static。这通常称为嵌套类(nested class)
      * Static Nested Class是被声明为静态（static）的内部类，它可以不依赖于外部类实例被实例化。
@@ -49,7 +51,9 @@ public class StopThreadUnsafe {
      * 2. 不能从嵌套类的对象中访问非静态的外围类对象。
      */
     public static class ChangeObjectThread extends Thread {
-        //通过添加一个标志位，来判断线程是否需要stop
+        /**
+         * 通过添加一个标志位，来判断线程是否需要stop
+         */
         volatile boolean stopme = false;
 
         public void stopMe() {
