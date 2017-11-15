@@ -1,4 +1,4 @@
-package multithread;
+package multithread.basic.interrupt;
 
 /**
  * 中断异常触发条件的测试

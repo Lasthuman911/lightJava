@@ -1,6 +1,4 @@
-package multithread;
-
-import org.junit.runner.RunWith;
+package multithread.basic.create;
 
 /**
  * 实现Runnable接口来创建线程，将实例传入Thread，避免了重载Thread.run()

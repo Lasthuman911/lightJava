@@ -1,4 +1,4 @@
-package multithread;
+package multithread.basic;
 
 /**
  * wait 和 notify 方法的简单测试

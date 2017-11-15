@@ -1,4 +1,4 @@
-package multithread;
+package multithread.basic;
 
 /**
  * join 的功能说明

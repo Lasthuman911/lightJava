@@ -1,4 +1,4 @@
-package multithread;
+package multithread.basic;
 
 /**
  * 使用不安全的stop方法终止线程，容易产生不一致的情况

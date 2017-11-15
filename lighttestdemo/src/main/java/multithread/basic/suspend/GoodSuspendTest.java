@@ -1,4 +1,4 @@
-package multithread;
+package multithread.basic.suspend;
 
 /**
  * BadSuspend重构后：添加一个标记状态

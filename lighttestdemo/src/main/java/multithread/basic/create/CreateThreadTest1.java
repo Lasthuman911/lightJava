@@ -1,4 +1,4 @@
-package multithread;
+package multithread.basic.create;
 
 public class CreateThreadTest1 {
     public static void main(String[] args) {

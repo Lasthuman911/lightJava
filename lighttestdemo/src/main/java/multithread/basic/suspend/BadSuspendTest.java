@@ -1,4 +1,4 @@
-package multithread;
+package multithread.basic.suspend;
 
 /**
  * jdk不建议使用方法之 suspend 和 resume

@@ -1,4 +1,4 @@
-package multithread;
+package multithread.basic.interrupt;
 
 /**
  * 线程中断测试
