@@ -1,7 +1,7 @@
 package multithread.basic.volatite;
 
 /**
- * volatite无法保证一些复合操作的原子性
+ * volatite无法保证一些复合操作的原子性，多个线程同时改动这个变量时，依然会产生冲突
  * TODO volatite保证原子性的例子？
  * @author wzm
  * @create 2017-11-15-10:12
