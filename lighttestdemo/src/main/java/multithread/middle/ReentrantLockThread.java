@@ -9,6 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @create 2017-11-15-14:25
  */
 public class ReentrantLockThread implements Runnable {
+    /**创建锁*/
     public static ReentrantLock lock = new ReentrantLock();
     public static int i = 0;
     @Override
