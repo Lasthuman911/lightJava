@@ -15,7 +15,9 @@ public class VolatiteTest2 {
     public static class ReadThread extends Thread{
         @Override
         public void run(){
-            while (!ready){}
+            while (!ready){
+                System.out.println("not ready");
+            }
             System.out.println(number);
         }
     }
@@ -25,6 +27,6 @@ public class VolatiteTest2 {
         Thread.sleep(100);
         number = 42;
         ready = true;
-        Thread.sleep(10000);
+        Thread.sleep(1000);
     }
 }

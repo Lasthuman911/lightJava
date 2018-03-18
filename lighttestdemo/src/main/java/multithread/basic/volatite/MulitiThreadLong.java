@@ -12,7 +12,7 @@ public class MulitiThreadLong {
 
         @Override
         public void run() {
-            for (int k = 0;k<1000;k++){
+            for (int k = 0;k<100000;k++){
                 i++;
             }
         }

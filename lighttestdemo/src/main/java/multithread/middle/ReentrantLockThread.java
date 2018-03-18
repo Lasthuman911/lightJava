@@ -29,8 +29,9 @@ public class ReentrantLockThread implements Runnable {
 
     public static void main(String[] args) throws InterruptedException {
         ReentrantLockThread thread = new ReentrantLockThread();
+        ReentrantLockThread thread1 = new ReentrantLockThread();
         Thread t1 = new Thread(thread);
-        Thread t2 = new Thread(thread);
+        Thread t2 = new Thread(thread1);//这里用thread 或thread1 都没关系，因为有锁机制
         t1.start();
         t2.start();
         t1.join();

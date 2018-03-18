@@ -12,6 +12,7 @@
         <module>lighttestdemo</module>
         <module>lightutils</module>
         <module>lszhentest</module>
+        <module>poi</module>
     </modules>
 
 

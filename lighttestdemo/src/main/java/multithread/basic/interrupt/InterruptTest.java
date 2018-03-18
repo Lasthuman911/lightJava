@@ -14,9 +14,10 @@ public class InterruptTest {
           @Override
           public void run(){
               while (true){
-                  //判断是否中断，不清除当前线程中断状态，如果是静态的Thread.isInterrupted 则会清除当前中断状态
+                  //isInterrupted判断是否中断，不清除当前线程中断状态，如果是静态的Thread.Interrupted 则会清除当前中断状态
                   if (Thread.currentThread().isInterrupted()){
                       System.out.println("interruted state="+Thread.currentThread().isInterrupted());
+                      //判断是否中断，但是会清除当前的中断状态
                       System.out.println("thread.interruted()="+Thread.interrupted());
                       System.out.println("interruted state="+Thread.currentThread().isInterrupted());
                       break;

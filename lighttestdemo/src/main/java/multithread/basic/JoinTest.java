@@ -20,6 +20,7 @@ public class JoinTest {
         Thread t1 = new AddThread();
         t1.start();
         //主线程等待t1执行完毕
+        System.out.println(Thread.currentThread());
         t1.join();
         //i 永远是10000
         System.out.println("i="+ i);

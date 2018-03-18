@@ -2,7 +2,6 @@ package multithread.basic;
 
 /**
  * 使用不安全的stop方法终止线程，容易产生不一致的情况
- * 重构后 添加一个stopme 状态来避免不一致情况
  *
  * @author wzm
  */
@@ -51,26 +50,14 @@ public class StopThreadUnsafe {
      * 2. 不能从嵌套类的对象中访问非静态的外围类对象。
      */
     public static class ChangeObjectThread extends Thread {
-        /**
-         * 通过添加一个标志位，来判断线程是否需要stop
-         */
-        volatile boolean stopme = false;
-
-        public void stopMe() {
-            stopme = true;
-        }
-
         @Override
         public void run() {
             while (true) {
-                if (stopme) {
-                    System.out.println("exixt by stopMe");
-                    break;
-                }
                 synchronized (user) {
                     int userId = (int) (System.currentTimeMillis() / 1000);
                     user.setId(userId);
                     try {
+                        //第二次执行到这的时候，在sleep时间中就被stop了，导致锁释放，id被改了，但是name没改
                         Thread.sleep(100);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -101,12 +88,10 @@ public class StopThreadUnsafe {
     public static void main(String[] args) throws InterruptedException {
         new ReadObjceThread().start();
         while (true) {
-//            Thread changeThread = new ChangeObjectThread();
-            //重构后，如果要用stopMe方法 不能用Thread来声明，因为Thread中并没有stopMe方法
             ChangeObjectThread changeThread = new ChangeObjectThread();
             changeThread.start();
             Thread.sleep(150);
-            changeThread.stopMe();
+            changeThread.stop();
         }
     }
 }

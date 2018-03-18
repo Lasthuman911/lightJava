@@ -12,6 +12,7 @@ import java.util.Vector;
  *  3. 打印出小于2000000 的长度值，而且并无报错
  * 解决方法：
  *  使用线程安全的Vector来代替ArrayList
+ *  TODO 研究下源码
  * @author wzm
  * @create 2017-11-15-13:38
  */
