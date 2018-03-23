@@ -12,7 +12,7 @@ public class ClientMain {
 //        oriR2withFactory();
 //        oriR3withFactory();
 //        oriR4withFactory();
-        oriR5WithFactory();//TODO 不懂咋不行
+        oriR5WithFactory();
        /* Fruit apple = FruitFactory.getFruit3(Apple.class);
         Fruit orange = FruitFactory.getFruit3(Orange.class);
         apple.getName();
@@ -41,12 +41,12 @@ public class ClientMain {
         orange.getName();
     }
 
-    private static void oriR2withFactory() {
+   /* private static void oriR2withFactory() {
         Fruit apple = new FruitFactory().getApple();
         apple.getName();
         Fruit orange = new FruitFactory().getOrange();
         orange.getName();
-    }
+    }*/
 
     /**
      * 添加多态

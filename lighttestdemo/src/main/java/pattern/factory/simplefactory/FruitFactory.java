@@ -7,6 +7,9 @@ import java.lang.reflect.Type;
  * @date 2018/3/22.
  */
 public class FruitFactory {
+
+    private static final String packageName = "pattern.factory.simplefactory";
+
     public static Fruit getApple() {
         return new Apple();
     }
@@ -27,7 +30,7 @@ public class FruitFactory {
     }
 
     public static Fruit getFruit2(String fruitName) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
-        return (Fruit) Class.forName(fruitName).newInstance();
+        return (Fruit) Class.forName(packageName+"."+fruitName).newInstance();
     }
 
     public static Fruit getFruit3(Class clazz) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
