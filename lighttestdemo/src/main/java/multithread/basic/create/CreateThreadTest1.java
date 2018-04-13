@@ -13,5 +13,6 @@ public class CreateThreadTest1 {
         };
         t1.start();
 //        t1.run();
+
     }
 }
